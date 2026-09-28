@@ -106,7 +106,7 @@ export default function WhoWeAre() {
                 }}
               >
                 <Typography variant="h3" sx={{ color: 'primary.main', fontWeight: 700, lineHeight: 1 }}>
-                 5+
+                 5+ 
                 </Typography>
                 <Typography variant="overline" color="text.secondary" sx={{ letterSpacing: 0.5 }}>
                   Years of Trust
