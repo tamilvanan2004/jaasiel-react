@@ -197,19 +197,7 @@ export default function ServiceAreas() {
 
       <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
         {/* Header — left aligned */}
-             <Breadcrumbs
-  separator={<NavigateNextRoundedIcon sx={{ fontSize: 16, color: 'text.disabled' }} />}
-  sx={{ mb: 3, fontSize: 13 }}
->
-  <Link href="/" underline="hover" color="text.secondary" sx={{ fontSize: 13, fontWeight: 500 }}>
-     <Typography color="primary.main" fontSize={13} fontWeight={600}>
-    Home
-  </Typography>
-  </Link>
-  <Typography color="primary.main" fontSize={13} fontWeight={600}>
-    Service Areas
-  </Typography>
-</Breadcrumbs>
+    
         <Box
           component={motion.div}
           initial={{ opacity: 0, y: 24 }}

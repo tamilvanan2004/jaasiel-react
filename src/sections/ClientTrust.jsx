@@ -2,7 +2,21 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 
-const logos = ['Client Logo 1', 'Client Logo 2', 'Client Logo 3', 'Client Logo 4', 'Client Logo 5'];
+// Logos are in /public/clients/ (unzip clients.zip there)
+const clients = [
+  { name: 'Maika Metals', logo: '/clients/maika-metals.png' },
+  { name: 'IDBI Bank', logo: '/clients/idbi-bank.png' },
+  { name: 'UE Press Tools Pvt Ltd', logo: '/clients/ue-press-tools.png' },
+  { name: 'UE Press Tools Pvt Ltd (Ambattur)', logo: '/clients/ue-press-tools-ambattur.png' },
+  { name: 'MPS Engineering Work', logo: '/clients/mps-engineering.png' },
+  { name: 'Globe Engineering Solutions Pvt Ltd', logo: '/clients/globe-engineering.png' },
+  { name: 'Lakshmi Industries', logo: '/clients/lakshmi-industries.png' },
+  { name: 'PKR Complete Kitchen Solutions', logo: '/clients/pkr.png' },
+  { name: 'Chennai Forge Products Pvt Ltd', logo: '/clients/chennai-forge.png' },
+  { name: 'HM', logo: '/clients/hm.png' },
+  { name: 'Dakshin Industries', logo: '/clients/dakshin-industries.png' },
+  { name: 'Metal Forms Private Limited', logo: '/clients/metal-forms.png' },
+];
 
 export default function ClientTrust() {
   return (
@@ -16,8 +30,8 @@ export default function ClientTrust() {
           <Box
             sx={{
               display: 'flex',
-              width: '200%',
-              animation: 'scrollLogos 30s linear infinite',
+              width: 'max-content',
+              animation: 'scrollLogos 40s linear infinite',
               '@keyframes scrollLogos': {
                 '0%': { transform: 'translateX(0)' },
                 '100%': { transform: 'translateX(-50%)' },
@@ -25,14 +39,34 @@ export default function ClientTrust() {
             }}
           >
             {[0, 1].map((rep) => (
-              <Box key={rep} sx={{ width: '50%', display: 'flex', justifyContent: 'space-around', alignItems: 'center', gap: 4, px: 2 }}>
-                {logos.map((l) => (
-                  <Typography
-                    key={l}
-                    sx={{ fontSize: '24px', fontWeight: 700, opacity: 0.5, filter: 'grayscale(1)', whiteSpace: 'nowrap' }}
+              <Box key={rep} sx={{ display: 'flex', alignItems: 'center', gap: 4, px: 2, flexShrink: 0 }}>
+                {clients.map((c) => (
+                  <Box
+                    key={c.name}
+                    sx={{
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                      gap: 1,
+                      flexShrink: 0,
+                      width: 200,
+                      opacity: 0.5,
+                      filter: 'grayscale(1)',
+                      transition: 'opacity 0.3s ease, filter 0.3s ease',
+                      '&:hover': { opacity: 1, filter: 'grayscale(0)' },
+                    }}
                   >
-                    {l}
-                  </Typography>
+                    <Box
+                      component="img"
+                      src={c.logo}
+                      alt={`${c.name} logo`}
+                      loading="lazy"
+                      sx={{ width: 200, height: 70, objectFit: 'contain', display: 'block' }}
+                    />
+                    <Typography sx={{ fontSize: '14px', fontWeight: 700, lineHeight: 1.3, textAlign: 'center' }}>
+                      {c.name}
+                    </Typography>
+                  </Box>
                 ))}
               </Box>
             ))}

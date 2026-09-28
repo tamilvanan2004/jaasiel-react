@@ -1,10 +1,10 @@
 import React from 'react'
-import ClientTrust from '../sections/ClientTrust'
+import GridClient from '../sections/GridClient'
 import Testimonials from '../sections/Testimonials'
 function Clients() {
   return (
     <>
-      <ClientTrust/>
+      <GridClient/>
       <Testimonials/>
     </>
   )

@@ -13,6 +13,7 @@ import { motion } from 'framer-motion';
 import { aboutHighlights, aboutMeta, aboutImage } from '../data/content';
 import GrowthTimeline from '../components/GrowthTimeline';
 import Process from '../sections/Process';
+import MissionAndVision from '../components/MissionAndVision';
 const iconMap = { work: WorkIcon, verified: VerifiedIcon, settings: SettingsIcon, sync: SyncIcon };
 
 const fadeUp = {
@@ -105,7 +106,7 @@ export default function WhoWeAre() {
                 }}
               >
                 <Typography variant="h3" sx={{ color: 'primary.main', fontWeight: 700, lineHeight: 1 }}>
-                  8+
+                 5+
                 </Typography>
                 <Typography variant="overline" color="text.secondary" sx={{ letterSpacing: 0.5 }}>
                   Years of Trust
@@ -262,6 +263,7 @@ export default function WhoWeAre() {
         <GrowthTimeline />
       </Box>
       <Process/>
+      <MissionAndVision/>
     </Box>
   );
 }
